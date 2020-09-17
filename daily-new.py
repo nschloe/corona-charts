@@ -1,7 +1,7 @@
 from datetime import datetime
 import matplotlib.pyplot as plt
 import json
-import math
+import numpy
 import dufte
 from si_prefix import si_format
 
@@ -21,63 +21,87 @@ def johnshopkins(which):
         }
         for key, values in data.items()
     }
-    print(d["Germany"]["values"])
-    print()
     # convert to new
     for key, dd in d.items():
         new = [b - a for a, b in zip(dd["values"][:-1], dd["values"][1:])]
-        d[key] = {
-            "dates": dd["dates"][1:],
-            "values": new
-        }
+        d[key] = {"dates": dd["dates"][1:], "values": new}
     return d
 
 
-d = johnshopkins("confirmed")
-# d = johnshopkins("deaths")
+def get_top10(d, average_over):
+    last_averages = [
+        sum(item["values"][-average_over:]) / average_over for item in d.values()
+    ]
+    idx = numpy.argsort(last_averages)
+    return [list(d.keys())[i] for i in idx][::-1][:10]
 
-plot_keys = [
-    # "Austria",
-    # "Belgium",
-    "Brazil",
-    # "Denmark",
-    "France",
-    "Germany",
-    # "Iran",
-    "Italy",
-    # "Japan",
-    # "Netherlands",
-    # "Poland",
-    # "Portugal",
-    "Russia",
-    "Spain",
-    # "South Korea",
-    # "Korea, South",
-    # "Sweden",
-    # "Switzerland",
-    "Turkey",
-    "United Kingdom",
-    # "United States",
-    "US",
-]
 
-for key in plot_keys:
-    dates = d[key]["dates"]
-    values = d[key]["values"]
-    # cut off leading zeros
-    for k, val in enumerate(values):
-        if val > 10:
-            break
-    dates = dates[k:]
-    values = values[k:]
+def sort_descending_by_last_average(keys, d, average_over):
+    last_averages = [
+        sum(d[key]["values"][-average_over:]) / average_over for key in keys
+    ]
+    idx = numpy.argsort(last_averages)
+    return [keys[k] for k in idx][::-1]
 
-    label = "{} ({})".format(key, si_format(sum(values)))
 
-    plt.plot(dates, values, "-", label=label, linewidth=3.0)
+def _main():
+    d = johnshopkins("confirmed")
+    # d = johnshopkins("deaths")
 
-plt.ylim(-100)
+    average_over = 7
 
-# plt.legend()
-dufte.legend()
-plt.title("daily new COVID-19 infections")
-plt.show()
+    # plot_keys = get_top10(d, average_over)
+    # Europe
+    plot_keys = [
+        "Germany",
+        "France",
+        "Spain",
+        "Austria",
+        "Switzerland",
+        "Netherlands",
+        "Sweden",
+        "Italy",
+        "United Kingdom",
+        "Belgium",
+        "Poland"
+        # "Denmark",
+        # "Greece",
+    ]
+
+    plot_keys = sort_descending_by_last_average(plot_keys, d, average_over)
+
+    for idx, key in enumerate(plot_keys):
+        dates = d[key]["dates"]
+        values = d[key]["values"]
+
+        # compute rolling sum over the last 7 days
+        values = numpy.array(values)
+        avg = numpy.zeros(len(values) - average_over + 1)
+        for k in range(average_over):
+            avg += values[k : len(values) - average_over + k + 1]
+        avg /= average_over
+
+        dates = dates[average_over - 1 :]
+        values = avg
+
+        # cut off leading zeros
+        for k, val in enumerate(values):
+            if val > 10:
+                break
+        dates = dates[k:]
+        values = values[k:]
+
+        label = "{} ({})".format(key, si_format(sum(values)))
+
+        plt.plot(dates, values, "-", label=label, linewidth=3.0, zorder=len(plot_keys) - idx)
+
+    plt.ylim(0)
+
+    # plt.legend()
+    dufte.legend()
+    plt.title(f"daily new COVID-19 infections (avg last {average_over} days)")
+    plt.show()
+
+
+if __name__ == "__main__":
+    _main()
