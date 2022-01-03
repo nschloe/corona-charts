@@ -29,7 +29,7 @@ def johnshopkins(which):
     return d
 
 
-def get_top10(d, average_over, selection=None):
+def get_top(k, d, average_over, selection=None):
     if selection is not None:
         d = {key: value for key, value in d.items() if key in selection}
 
@@ -37,7 +37,7 @@ def get_top10(d, average_over, selection=None):
         sum(item["values"][-average_over:]) / average_over for item in d.values()
     ]
     idx = numpy.argsort(last_averages)
-    return [list(d.keys())[i] for i in idx][::-1][:10]
+    return [list(d.keys())[i] for i in idx][::-1][:k]
 
 
 def sort_descending_by_last_average(keys, d, average_over):
@@ -55,7 +55,8 @@ def _main():
     d = johnshopkins(tpe)
     average_over = 7
 
-    plot_keys = get_top10(
+    plot_keys = get_top(
+        1,
         d,
         average_over,
         # [
