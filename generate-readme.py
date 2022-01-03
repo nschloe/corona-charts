@@ -20,13 +20,13 @@ def get_top(k, d, average_over, selection=None):
     if selection is not None:
         d = {key: value for key, value in d.items() if key in selection}
 
-    last_sums = [sum(values[-average_over:]) for values in d.values()]
+    last_sums = [values[-1] - values[-average_over - 1] for values in d.values()]
     idx = np.argsort(last_sums)
     return [list(d.keys())[i] for i in idx][::-1][:k]
 
 
 def sort_descending_by_last_average(keys, d, average_over):
-    last_sums = [sum(d[key][-average_over:]) for key in keys]
+    last_sums = [d[key][-1] - d[key][-average_over - 1] for key in keys]
     idx = np.argsort(last_sums)
     return [keys[k] for k in idx][::-1]
 
@@ -70,7 +70,7 @@ def _main():
     all_values = []
     for idx, key in enumerate(plot_keys):
         # <https://stackoverflow.com/a/14314054/353337>
-        ret = np.cumsum(d["values"][key], dtype=float)
+        ret = np.copy(d["values"][key])
         ret[average_over:] = ret[average_over:] - ret[:-average_over]
         avg = ret[average_over - 1 :] / average_over
         all_values.append(avg)
@@ -107,7 +107,7 @@ def _main():
     with open("README.md", "w") as f:
         f.write("```chartjs\n")
         json.dump(data, f, indent=2)
-        f.write("\n```")
+        f.write("\n```\n")
 
 
 if __name__ == "__main__":
