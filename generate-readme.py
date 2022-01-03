@@ -83,6 +83,8 @@ def _main():
 
     plot_keys = sort_descending_by_last_average(plot_keys, d, average_over)
 
+    colors = matplotx.styles.dracula["axes.prop_cycle"].by_key()["color"]
+
     datasets = []
     for idx, key in enumerate(plot_keys):
         dates = d[key]["dates"]
@@ -114,7 +116,7 @@ def _main():
             {
                 "data": data,
                 "label": f"{key} ({si_format(sum(values))})",
-                "borderColor": "#3e95cd",
+                "borderColor": colors[idx],
                 "fill": False,
             }
         )

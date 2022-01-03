@@ -2688,7 +2688,7 @@
             }
           ],
           "label": "US (54.1 M)",
-          "borderColor": "#3e95cd",
+          "borderColor": "#8be9fd",
           "fill": false
         },
         {
@@ -5383,7 +5383,7 @@
             }
           ],
           "label": "United Kingdom (12.8 M)",
-          "borderColor": "#3e95cd",
+          "borderColor": "#ffb86c",
           "fill": false
         },
         {
@@ -8086,7 +8086,7 @@
             }
           ],
           "label": "France (9.8 M)",
-          "borderColor": "#3e95cd",
+          "borderColor": "#50fa7b",
           "fill": false
         }
       ]
