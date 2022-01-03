@@ -1,7 +1,7 @@
 from datetime import datetime
 import matplotlib.pyplot as plt
 import json
-import numpy
+import numpy as np
 import pprint
 import matplotx
 from si_prefix import si_format
@@ -9,55 +9,38 @@ from si_prefix import si_format
 plt.style.use(matplotx.styles.dufte)
 
 
-def johnshopkins(which):
-    # https://github.com/pomber/covid19
-    # https://pomber.github.io/covid19/timeseries.json
-    with open("timeseries.json") as f:
+def read_data():
+    with open("data/time_series_covid19_confirmed_global.json") as f:
         data = json.load(f)
 
-    d = {
-        key: {
-            "dates": [datetime.strptime(val["date"], "%Y-%m-%d") for val in values],
-            "values": [val[which] for val in values],
-        }
-        for key, values in data.items()
-    }
-    # convert to new
-    for key, dd in d.items():
-        new = [b - a for a, b in zip(dd["values"][:-1], dd["values"][1:])]
-        d[key] = {"dates": dd["dates"][1:], "values": new}
-    return d
+    return data
 
 
 def get_top(k, d, average_over, selection=None):
     if selection is not None:
         d = {key: value for key, value in d.items() if key in selection}
 
-    last_averages = [
-        sum(item["values"][-average_over:]) / average_over for item in d.values()
-    ]
-    idx = numpy.argsort(last_averages)
+    last_sums = [sum(values[-average_over:]) for values in d.values()]
+    idx = np.argsort(last_sums)
     return [list(d.keys())[i] for i in idx][::-1][:k]
 
 
 def sort_descending_by_last_average(keys, d, average_over):
-    last_averages = [
-        sum(d[key]["values"][-average_over:]) / average_over for key in keys
-    ]
-    idx = numpy.argsort(last_averages)
+    last_sums = [sum(d[key][-average_over:]) for key in keys]
+    idx = np.argsort(last_sums)
     return [keys[k] for k in idx][::-1]
 
 
 def _main():
-    tpe = "confirmed"
+    # tpe = "confirmed"
     # tpe = "deaths"
 
-    d = johnshopkins(tpe)
+    d = read_data()
     average_over = 7
 
     plot_keys = get_top(
         3,
-        d,
+        d["values"],
         average_over,
         # [
         #     # Europe
@@ -81,50 +64,34 @@ def _main():
         # ],
     )
 
-    plot_keys = sort_descending_by_last_average(plot_keys, d, average_over)
+    plot_keys = sort_descending_by_last_average(plot_keys, d["values"], average_over)
+
+    # compute rolling average over the last n days
+    all_values = []
+    for idx, key in enumerate(plot_keys):
+        # <https://stackoverflow.com/a/14314054/353337>
+        ret = np.cumsum(d["values"][key], dtype=float)
+        ret[average_over:] = ret[average_over:] - ret[:-average_over]
+        avg = ret[average_over - 1 :] / average_over
+        all_values.append(avg)
 
     colors = matplotx.styles.dracula["axes.prop_cycle"].by_key()["color"]
 
-    datasets = []
-    for idx, key in enumerate(plot_keys):
-        dates = d[key]["dates"]
-        values = d[key]["values"]
-
-        # compute rolling sum over the last 7 days
-        values = numpy.array(values)
-        avg = numpy.zeros(len(values) - average_over + 1)
-        for k in range(average_over):
-            avg += values[k : len(values) - average_over + k + 1]
-        avg /= average_over
-
-        dates = dates[average_over - 1 :]
-        values = avg
-
-        # cut off leading zeros
-        for k, val in enumerate(values):
-            if val > 10:
-                break
-        dates = dates[k:]
-        values = values[k:]
-
-        data = [
-            {"x": date.strftime("%Y-%m-%d"), "y": val}
-            for date, val in zip(dates, values)
-        ]
-
-        datasets.append(
-            {
-                "data": data,
-                "label": f"{key} ({si_format(sum(values))})",
-                "borderColor": colors[idx],
-                "fill": False,
-            }
-        )
+    datasets = [
+        {
+            "data": vals.tolist(),
+            "label": key,
+            "borderColor": color,
+            "fill": False,
+        }
+        for key, vals, color in zip(plot_keys, all_values, colors)
+    ]
 
     data = {
         "config": {
             "type": "line",
             "data": {
+                "labels": d["dates"],
                 "datasets": datasets,
             },
             "options": {
