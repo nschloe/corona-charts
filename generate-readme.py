@@ -129,7 +129,8 @@ def _main():
                 "title": {
                     "display": True,
                     "text": f"Daily new COVID cases by country (avg last {average_over} days)",
-                }
+                },
+                "elements": {"point": {"radius": 0}},
             },
         }
     }
