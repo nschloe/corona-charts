@@ -56,7 +56,7 @@ def _main():
     average_over = 7
 
     plot_keys = get_top(
-        1,
+        3,
         d,
         average_over,
         # [
