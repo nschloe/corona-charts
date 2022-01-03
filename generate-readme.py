@@ -2,6 +2,7 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 import json
 import numpy
+import pprint
 import matplotx
 from si_prefix import si_format
 
@@ -81,6 +82,7 @@ def _main():
 
     plot_keys = sort_descending_by_last_average(plot_keys, d, average_over)
 
+    datasets = []
     for idx, key in enumerate(plot_keys):
         dates = d[key]["dates"]
         values = d[key]["values"]
@@ -102,18 +104,39 @@ def _main():
         dates = dates[k:]
         values = values[k:]
 
-        label = "{} ({})".format(key, si_format(sum(values)))
+        data = [
+            {"x": date.strftime("%Y-%m-%d"), "y": val}
+            for date, val in zip(dates, values)
+        ]
 
-        plt.plot(
-            dates, values, "-", label=label, linewidth=3.0, zorder=len(plot_keys) - idx
+        datasets.append(
+            {
+                "data": data,
+                "label": f"{key} ({si_format(sum(values))})",
+                # "borderColor": "#3e95cd",
+                "fill": False,
+            }
         )
 
-    plt.ylim(0)
+    data = {
+        "config": {
+            "type": "line",
+            "data": {
+                "datasets": datasets,
+            },
+            "options": {
+                "title": {
+                    "display": True,
+                    "text": f"Daily new COVID cases by country (avg last {average_over} days)",
+                }
+            },
+        }
+    }
 
-    # plt.legend()
-    matplotx.line_labels()
-    plt.title(f"daily new COVID-19 {tpe} (avg last {average_over} days)")
-    plt.show()
+    with open("README.md", "w") as f:
+        f.write("```chartjs\n")
+        json.dump(data, f, indent=2)
+        f.write("\n```")
 
 
 if __name__ == "__main__":
