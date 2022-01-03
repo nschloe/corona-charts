@@ -1,19 +1,10 @@
-from datetime import datetime
-import matplotlib.pyplot as plt
 import json
 import numpy as np
-import pprint
 import matplotx
 from si_prefix import si_format
-
-plt.style.use(matplotx.styles.dufte)
-
-
-def read_data():
-    with open("data/time_series_covid19_confirmed_global.json") as f:
-        data = json.load(f)
-
-    return data
+import tempfile
+import subprocess
+from pathlib import Path
 
 
 def get_top(k, d, average_over, selection=None):
@@ -31,38 +22,13 @@ def sort_descending_by_last_average(keys, d, average_over):
     return [keys[k] for k in idx][::-1]
 
 
-def _main():
-    # tpe = "confirmed"
-    # tpe = "deaths"
+def get_chartjs_json(infile, selection=None):
+    with open(infile) as f:
+        d = json.load(f)
 
-    d = read_data()
     average_over = 7
 
-    plot_keys = get_top(
-        3,
-        d["values"],
-        average_over,
-        # [
-        #     # Europe
-        #     "Austria",
-        #     "Belgium",
-        #     "Czechia",
-        #     "Denmark",
-        #     "Germany",
-        #     "Greece",
-        #     "France",
-        #     "Ireland",
-        #     "Italy",
-        #     "Netherlands",
-        #     "Poland",
-        #     "Portugal",
-        #     "Spain",
-        #     "Sweden",
-        #     "Switzerland",
-        #     "Czechia",
-        #     "United Kingdom",
-        # ],
-    )
+    plot_keys = get_top(10, d["values"], average_over, selection)
 
     plot_keys = sort_descending_by_last_average(plot_keys, d["values"], average_over)
 
@@ -101,15 +67,60 @@ def _main():
                     "display": True,
                     "text": f"Daily new COVID cases by country (avg last {average_over} days)",
                 },
-                "elements": {"point": {"radius": 0}}
+                "elements": {"point": {"radius": 0}},
             },
         }
     }
 
+    # write dict to file
+    with tempfile.TemporaryDirectory() as tmpdir:
+        tmpdir = Path(tmpdir)
+        tmpfile = tmpdir / "tmp.json"
+        with open(tmpfile, "w") as f:
+            json.dump(data, f)
+        # run prettier on the file
+        subprocess.check_call(["prettier", "--write", str(tmpfile)])
+        # get string
+        with open(tmpfile) as f:
+            json_content = f.read()
+
+    return json_content
+
+
+def _main():
+    top10 = get_chartjs_json("data/time_series_covid19_confirmed_global.json")
+    top10_europe = get_chartjs_json(
+        "data/time_series_covid19_confirmed_global.json",
+        selection=[
+            # Europe
+            "Austria",
+            "Belgium",
+            "Czechia",
+            "Denmark",
+            "Germany",
+            "Greece",
+            "France",
+            "Ireland",
+            "Italy",
+            "Netherlands",
+            "Poland",
+            "Portugal",
+            "Spain",
+            "Sweden",
+            "Switzerland",
+            "Czechia",
+            "United Kingdom",
+        ],
+    )
+
+    with open("README.md.in") as f:
+        readme_in = f.read()
+
+    readme_out = readme_in.format(top10=top10, top10_europe=top10_europe)
+
     with open("README.md", "w") as f:
-        f.write("```chartjs\n")
-        json.dump(data, f, indent=2)
-        f.write("\n```\n")
+        f.write(readme_out)
+
 
 
 if __name__ == "__main__":

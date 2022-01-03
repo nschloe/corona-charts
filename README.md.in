@@ -1,0 +1,13 @@
+# Corona charts
+
+### Top 10 contries by infections
+
+```chartjs
+{top10}
+```
+
+### Top 10 contries by infections (Europe)
+
+```chartjs
+{top10_europe}
+```
