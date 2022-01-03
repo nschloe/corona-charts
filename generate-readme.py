@@ -79,7 +79,8 @@ def _main():
 
     datasets = [
         {
-            "data": vals.tolist(),
+            # round to integer for small output files
+            "data": vals.astype(int).tolist(),
             "label": key,
             "borderColor": color,
             "fill": False,
@@ -100,6 +101,9 @@ def _main():
                     "text": f"Daily new COVID cases by country (avg last {average_over} days)",
                 },
                 "elements": {"point": {"radius": 0}},
+                "scales": {
+                    "yAxes": [{"display": True, "ticks": {"beginAtZero": True}}]
+                },
             },
         }
     }
