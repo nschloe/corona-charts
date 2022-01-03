@@ -114,7 +114,7 @@ def _main():
             {
                 "data": data,
                 "label": f"{key} ({si_format(sum(values))})",
-                # "borderColor": "#3e95cd",
+                "borderColor": "#3e95cd",
                 "fill": False,
             }
         )

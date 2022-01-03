@@ -2688,6 +2688,7 @@
             }
           ],
           "label": "US (54.1 M)",
+          "borderColor": "#3e95cd",
           "fill": false
         }
       ]
