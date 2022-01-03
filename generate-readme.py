@@ -67,7 +67,12 @@ def get_chartjs_json(infile, selection=None):
                     "display": True,
                     "text": f"Daily new COVID cases by country (avg last {average_over} days)",
                 },
+                # don't show markers
                 "elements": {"point": {"radius": 0}},
+                # show only months
+                "scales": {
+                    "xAxes": [{"type": "time", "time": {"unit": "month"}}],
+                },
             },
         }
     }
@@ -120,7 +125,6 @@ def _main():
 
     with open("README.md", "w") as f:
         f.write(readme_out)
-
 
 
 if __name__ == "__main__":

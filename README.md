@@ -1322,7 +1322,8 @@
         "display": true,
         "text": "Daily new COVID cases by country (avg last 7 days)"
       },
-      "elements": { "point": { "radius": 0 } }
+      "elements": { "point": { "radius": 0 } },
+      "scales": { "xAxes": [{ "type": "time", "time": { "unit": "month" } }] }
     }
   }
 }
@@ -2614,7 +2615,8 @@
         "display": true,
         "text": "Daily new COVID cases by country (avg last 7 days)"
       },
-      "elements": { "point": { "radius": 0 } }
+      "elements": { "point": { "radius": 0 } },
+      "scales": { "xAxes": [{ "type": "time", "time": { "unit": "month" } }] }
     }
   }
 }
