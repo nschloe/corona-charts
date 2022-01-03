@@ -71,7 +71,7 @@ def get_chartjs_json(infile, selection=None):
                 "elements": {"point": {"radius": 0}},
                 # show only months
                 "scales": {
-                    "xAxes": [{"type": "time", "time": {"minUnit": "month"}}],
+                    "xAxes": [{"type": "time", "time": {"unit": "month"}}],
                 },
             },
         }
