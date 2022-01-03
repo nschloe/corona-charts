@@ -79,11 +79,12 @@ def _main():
 
     datasets = [
         {
-            # round to integer for small output files
-            "data": vals.astype(int).tolist(),
             "label": key,
             "borderColor": color,
             "fill": False,
+            # round to integer for small output files
+            # also sanitize negative values
+            "data": np.clip(vals.astype(int), 0, None).tolist(),
         }
         for key, vals, color in zip(plot_keys, all_values, colors)
     ]
@@ -100,10 +101,7 @@ def _main():
                     "display": True,
                     "text": f"Daily new COVID cases by country (avg last {average_over} days)",
                 },
-                "elements": {"point": {"radius": 0}},
-                "scales": {
-                    "yAxes": [{"display": True, "ticks": {"beginAtZero": True}}]
-                },
+                "elements": {"point": {"radius": 0}}
             },
         }
     }
