@@ -32,7 +32,7 @@ def get_chartjs_json(infile, selection=None):
 
     plot_keys = sort_descending_by_last_average(plot_keys, d["values"], average_over)
 
-    # compute rolling average over the last n days
+    # compute rolling average
     all_values = []
     for idx, key in enumerate(plot_keys):
         # <https://stackoverflow.com/a/14314054/353337>
@@ -55,11 +55,16 @@ def get_chartjs_json(infile, selection=None):
         for key, vals, color in zip(plot_keys, all_values, colors)
     ]
 
+    # pick out one in seven, starting from the end
+    dates = d["dates"][::-1][::7][::-1]
+    for dataset in datasets:
+        dataset["data"] = dataset["data"][::-1][::7][::-1]
+
     data = {
         "config": {
             "type": "line",
             "data": {
-                "labels": d["dates"],
+                "labels": dates,
                 "datasets": datasets,
             },
             "options": {
