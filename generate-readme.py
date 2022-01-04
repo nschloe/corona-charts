@@ -28,7 +28,7 @@ def get_chartjs_json(infile, selection=None):
 
     average_over = 7
 
-    plot_keys = get_top(10, d["values"], average_over, selection)
+    plot_keys = get_top(5, d["values"], average_over, selection)
 
     plot_keys = sort_descending_by_last_average(plot_keys, d["values"], average_over)
 

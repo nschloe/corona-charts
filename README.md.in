@@ -1,12 +1,12 @@
 # Corona charts
 
-### Top 10 contries by infections
+### Top 5 contries by infections (7-day average)
 
 ```chartjs
 {top10}
 ```
 
-### Top 10 contries by infections (Europe)
+### Top 5 contries by infections (7-day average, Europe)
 
 ```chartjs
 {top10_europe}
