@@ -1,13 +1,24 @@
 # Corona charts
 
-### Top 5 contries by infections (7-day average)
+### Top 5 countries by infections (7-day average, world)
 
 ```chartjs
-{top10}
+{top10_confirmed_world}
 ```
 
-### Top 5 contries by infections (7-day average, Europe)
+### Top 5 countries by infections (7-day average, Europe)
 
 ```chartjs
-{top10_europe}
+{top10_confirmed_europe}
+```
+### Top 5 countries by deaths (7-day average, world)
+
+```chartjs
+{top10_deaths_world}
+```
+
+### Top 5 countries by deaths (7-day average, Europe)
+
+```chartjs
+{top10_deaths_europe}
 ```
