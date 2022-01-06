@@ -48,6 +48,7 @@ def get_chartjs_json(infile, selection=None):
         {
             "label": key,
             "borderColor": color,
+            "borderWidth": 1,
             "fill": False,
             # round to integer for small output files
             # also sanitize negative values
@@ -68,7 +69,6 @@ def get_chartjs_json(infile, selection=None):
                 "labels": dates,
                 "datasets": datasets,
             },
-            "borderWidth": 1,
             "options": {
                 # don't show markers
                 "elements": {"point": {"radius": 0}},
