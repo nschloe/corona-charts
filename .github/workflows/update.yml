@@ -23,6 +23,10 @@ jobs:
         run: |
           cd data
           python3 convert-to-json.py
+      - name: format
+        run: |
+          npm install -g prettier
+          prettier --write *.json
       - name: Commit data
         run: |
           git config --global user.name 'Nico Schlömer'
