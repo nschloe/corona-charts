@@ -43,8 +43,9 @@ def get_chartjs_json(infile, selection=None):
     # cut dates accordingly
     d["dates"] = d["dates"][average_over - 1 :]
 
-    colors = matplotx.styles.dracula["axes.prop_cycle"].by_key()["color"]
-    grid_color = matplotx.styles.dracula["grid.color"]
+    theme = matplotx.styles.onedark
+    colors = theme["axes.prop_cycle"].by_key()["color"]
+    grid_color = theme["grid.color"]
 
     datasets = [
         {

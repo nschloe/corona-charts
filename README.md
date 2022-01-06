@@ -114,7 +114,7 @@
       "datasets": [
         {
           "label": "US",
-          "borderColor": "#8be9fd",
+          "borderColor": "#61afef",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -134,7 +134,7 @@
         },
         {
           "label": "France",
-          "borderColor": "#ffb86c",
+          "borderColor": "#d49f6e",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -152,7 +152,7 @@
         },
         {
           "label": "United Kingdom",
-          "borderColor": "#50fa7b",
+          "borderColor": "#98c379",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -170,7 +170,7 @@
         },
         {
           "label": "Italy",
-          "borderColor": "#ff5555",
+          "borderColor": "#e06c75",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -188,7 +188,7 @@
         },
         {
           "label": "Spain",
-          "borderColor": "#bd93f9",
+          "borderColor": "#c678dd",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -213,9 +213,9 @@
           "type": "time",
           "time": { "unit": "month" },
           "grid": { "display": false },
-          "ticks": { "color": "#6272a4" }
+          "ticks": { "color": "#5c6370" }
         },
-        "y": { "grid": { "color": "#6272a4" }, "ticks": { "color": "#6272a4" } }
+        "y": { "grid": { "color": "#5c6370" }, "ticks": { "color": "#5c6370" } }
       }
     }
   }
@@ -337,7 +337,7 @@
       "datasets": [
         {
           "label": "France",
-          "borderColor": "#8be9fd",
+          "borderColor": "#61afef",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -355,7 +355,7 @@
         },
         {
           "label": "United Kingdom",
-          "borderColor": "#ffb86c",
+          "borderColor": "#d49f6e",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -373,7 +373,7 @@
         },
         {
           "label": "Italy",
-          "borderColor": "#50fa7b",
+          "borderColor": "#98c379",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -391,7 +391,7 @@
         },
         {
           "label": "Spain",
-          "borderColor": "#ff5555",
+          "borderColor": "#e06c75",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -409,7 +409,7 @@
         },
         {
           "label": "Germany",
-          "borderColor": "#bd93f9",
+          "borderColor": "#c678dd",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -434,9 +434,9 @@
           "type": "time",
           "time": { "unit": "month" },
           "grid": { "display": false },
-          "ticks": { "color": "#6272a4" }
+          "ticks": { "color": "#5c6370" }
         },
-        "y": { "grid": { "color": "#6272a4" }, "ticks": { "color": "#6272a4" } }
+        "y": { "grid": { "color": "#5c6370" }, "ticks": { "color": "#5c6370" } }
       }
     }
   }
@@ -557,7 +557,7 @@
       "datasets": [
         {
           "label": "US",
-          "borderColor": "#8be9fd",
+          "borderColor": "#61afef",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -574,7 +574,7 @@
         },
         {
           "label": "Russia",
-          "borderColor": "#ffb86c",
+          "borderColor": "#d49f6e",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -590,7 +590,7 @@
         },
         {
           "label": "Poland",
-          "borderColor": "#50fa7b",
+          "borderColor": "#98c379",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -605,7 +605,7 @@
         },
         {
           "label": "India",
-          "borderColor": "#ff5555",
+          "borderColor": "#e06c75",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -621,7 +621,7 @@
         },
         {
           "label": "Germany",
-          "borderColor": "#bd93f9",
+          "borderColor": "#c678dd",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -643,9 +643,9 @@
           "type": "time",
           "time": { "unit": "month" },
           "grid": { "display": false },
-          "ticks": { "color": "#6272a4" }
+          "ticks": { "color": "#5c6370" }
         },
-        "y": { "grid": { "color": "#6272a4" }, "ticks": { "color": "#6272a4" } }
+        "y": { "grid": { "color": "#5c6370" }, "ticks": { "color": "#5c6370" } }
       }
     }
   }
@@ -767,7 +767,7 @@
       "datasets": [
         {
           "label": "Poland",
-          "borderColor": "#8be9fd",
+          "borderColor": "#61afef",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -782,7 +782,7 @@
         },
         {
           "label": "Germany",
-          "borderColor": "#ffb86c",
+          "borderColor": "#d49f6e",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -797,7 +797,7 @@
         },
         {
           "label": "France",
-          "borderColor": "#50fa7b",
+          "borderColor": "#98c379",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -812,7 +812,7 @@
         },
         {
           "label": "United Kingdom",
-          "borderColor": "#ff5555",
+          "borderColor": "#e06c75",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -827,7 +827,7 @@
         },
         {
           "label": "Italy",
-          "borderColor": "#bd93f9",
+          "borderColor": "#c678dd",
           "borderWidth": 1,
           "fill": false,
           "data": [
@@ -849,9 +849,9 @@
           "type": "time",
           "time": { "unit": "month" },
           "grid": { "display": false },
-          "ticks": { "color": "#6272a4" }
+          "ticks": { "color": "#5c6370" }
         },
-        "y": { "grid": { "color": "#6272a4" }, "ticks": { "color": "#6272a4" } }
+        "y": { "grid": { "color": "#5c6370" }, "ticks": { "color": "#5c6370" } }
       }
     }
   }
