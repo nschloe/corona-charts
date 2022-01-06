@@ -202,9 +202,19 @@
         }
       ]
     },
+    "borderWidth": 1,
     "options": {
       "elements": { "point": { "radius": 0 } },
-      "scales": { "xAxes": [{ "type": "time", "time": { "unit": "month" } }] }
+      "scales": {
+        "xAxes": [
+          {
+            "type": "time",
+            "time": { "unit": "month" },
+            "gridLines": { "color": "#6272a4" }
+          }
+        ],
+        "yAxes": [{ "gridLines": { "color": "#6272a4" } }]
+      }
     }
   }
 }
@@ -411,9 +421,19 @@
         }
       ]
     },
+    "borderWidth": 1,
     "options": {
       "elements": { "point": { "radius": 0 } },
-      "scales": { "xAxes": [{ "type": "time", "time": { "unit": "month" } }] }
+      "scales": {
+        "xAxes": [
+          {
+            "type": "time",
+            "time": { "unit": "month" },
+            "gridLines": { "color": "#6272a4" }
+          }
+        ],
+        "yAxes": [{ "gridLines": { "color": "#6272a4" } }]
+      }
     }
   }
 }
@@ -608,9 +628,19 @@
         }
       ]
     },
+    "borderWidth": 1,
     "options": {
       "elements": { "point": { "radius": 0 } },
-      "scales": { "xAxes": [{ "type": "time", "time": { "unit": "month" } }] }
+      "scales": {
+        "xAxes": [
+          {
+            "type": "time",
+            "time": { "unit": "month" },
+            "gridLines": { "color": "#6272a4" }
+          }
+        ],
+        "yAxes": [{ "gridLines": { "color": "#6272a4" } }]
+      }
     }
   }
 }
@@ -802,9 +832,19 @@
         }
       ]
     },
+    "borderWidth": 1,
     "options": {
       "elements": { "point": { "radius": 0 } },
-      "scales": { "xAxes": [{ "type": "time", "time": { "unit": "month" } }] }
+      "scales": {
+        "xAxes": [
+          {
+            "type": "time",
+            "time": { "unit": "month" },
+            "gridLines": { "color": "#6272a4" }
+          }
+        ],
+        "yAxes": [{ "gridLines": { "color": "#6272a4" } }]
+      }
     }
   }
 }
