@@ -27,6 +27,10 @@ jobs:
         run: |
           npm install -g prettier
           prettier --write data/*.json
+      - name: Create readme
+        run: |
+          cd plots
+          python3 generate-readme.py
       - name: Commit data
         run: |
           git config --global user.name 'Nico Schlömer'

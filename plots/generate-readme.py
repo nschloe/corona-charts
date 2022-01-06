@@ -95,9 +95,11 @@ def get_chartjs_json(infile, selection=None):
 
 def _main():
     top10_confirmed_world = get_chartjs_json(
-        "data/time_series_covid19_confirmed_global.json"
+        "../data/time_series_covid19_confirmed_global.json"
     )
-    top10_deaths_world = get_chartjs_json("data/time_series_covid19_deaths_global.json")
+    top10_deaths_world = get_chartjs_json(
+        "../data/time_series_covid19_deaths_global.json"
+    )
     european_contries = [
         "Austria",
         "Belgium",
@@ -118,10 +120,10 @@ def _main():
         "United Kingdom",
     ]
     top10_confirmed_europe = get_chartjs_json(
-        "data/time_series_covid19_confirmed_global.json", selection=european_contries
+        "../data/time_series_covid19_confirmed_global.json", selection=european_contries
     )
     top10_deaths_europe = get_chartjs_json(
-        "data/time_series_covid19_deaths_global.json", selection=european_contries
+        "../data/time_series_covid19_deaths_global.json", selection=european_contries
     )
 
     with open("README.md.in") as f:
@@ -134,7 +136,7 @@ def _main():
         top10_deaths_europe=top10_deaths_europe,
     )
 
-    with open("README.md", "w") as f:
+    with open("../README.md", "w") as f:
         f.write(readme_out)
 
 
