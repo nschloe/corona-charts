@@ -42,6 +42,7 @@ def get_chartjs_json(infile, selection=None):
         all_values.append(avg)
 
     colors = matplotx.styles.dracula["axes.prop_cycle"].by_key()["color"]
+    grid_color = matplotx.styles.dracula["grid.color"]
 
     datasets = [
         {
@@ -67,12 +68,20 @@ def get_chartjs_json(infile, selection=None):
                 "labels": dates,
                 "datasets": datasets,
             },
+            "borderWidth": 1,
             "options": {
                 # don't show markers
                 "elements": {"point": {"radius": 0}},
                 # show only months
                 "scales": {
-                    "xAxes": [{"type": "time", "time": {"unit": "month"}}],
+                    "xAxes": [
+                        {
+                            "type": "time",
+                            "time": {"unit": "month"},
+                            "gridLines": {"color": grid_color},
+                        }
+                    ],
+                    "yAxes": [{"gridLines": {"color": grid_color}}],
                 },
             },
         }
