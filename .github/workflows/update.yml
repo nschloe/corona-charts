@@ -26,7 +26,7 @@ jobs:
       - name: format
         run: |
           npm install -g prettier
-          prettier --write *.json
+          prettier --write data/*.json
       - name: Commit data
         run: |
           git config --global user.name 'Nico Schlömer'
