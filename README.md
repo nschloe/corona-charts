@@ -213,7 +213,7 @@
         "x": {
           "type": "time",
           "time": { "unit": "month" },
-          "grid": { "color": "#6272a4" }
+          "grid": { "display": false }
         },
         "y": { "grid": { "color": "#6272a4" } }
       }
@@ -434,7 +434,7 @@
         "x": {
           "type": "time",
           "time": { "unit": "month" },
-          "grid": { "color": "#6272a4" }
+          "grid": { "display": false }
         },
         "y": { "grid": { "color": "#6272a4" } }
       }
@@ -643,7 +643,7 @@
         "x": {
           "type": "time",
           "time": { "unit": "month" },
-          "grid": { "color": "#6272a4" }
+          "grid": { "display": false }
         },
         "y": { "grid": { "color": "#6272a4" } }
       }
@@ -849,7 +849,7 @@
         "x": {
           "type": "time",
           "time": { "unit": "month" },
-          "grid": { "color": "#6272a4" }
+          "grid": { "display": false }
         },
         "y": { "grid": { "color": "#6272a4" } }
       }

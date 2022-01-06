@@ -77,7 +77,7 @@ def get_chartjs_json(infile, selection=None):
                     "x": {
                         "type": "time",
                         "time": {"unit": "month"},
-                        "grid": {"color": grid_color},
+                        "grid": {"display": False},
                     },
                     "y": {"grid": {"color": grid_color}},
                 },
