@@ -1,14 +1,14 @@
 name: update
 
-# perform every day
-# on:
-#   schedule:
-#     - cron: "0 0 * * *"
-
+perform every day
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: "0 4 * * *"
+
+# on:
+#   push:
+#     branches:
+#       - main
 
 jobs:
   update:
