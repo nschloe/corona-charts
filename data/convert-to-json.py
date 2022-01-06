@@ -18,6 +18,7 @@ for root in roots:
         country_name = row[1]
         assert len(row[4:]) == len(dates)
         new_data = [int(string) for string in row[4:]]
+        assert len(new_data) == len(dates)
         if country_name in values:
             for i in range(len(new_data)):
                 values[country_name][i] += new_data[i]

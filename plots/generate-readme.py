@@ -40,6 +40,8 @@ def get_chartjs_json(infile, selection=None):
         ret[average_over:] = ret[average_over:] - ret[:-average_over]
         avg = ret[average_over - 1 :] / average_over
         all_values.append(avg)
+    # cut dates accordingly
+    d["dates"] = d["dates"][average_over - 1:]
 
     colors = matplotx.styles.dracula["axes.prop_cycle"].by_key()["color"]
     grid_color = matplotx.styles.dracula["grid.color"]
@@ -61,6 +63,7 @@ def get_chartjs_json(infile, selection=None):
     dates = d["dates"][::-1][::7][::-1]
     for dataset in datasets:
         dataset["data"] = dataset["data"][::-1][::7][::-1]
+        assert len(dataset["data"]) == len(dates)
 
     data = {
         "config": {
