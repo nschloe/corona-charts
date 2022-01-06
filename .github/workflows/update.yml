@@ -1,0 +1,30 @@
+name: update
+
+# perform every day
+# on:
+#   schedule:
+#     - cron: "0 0 * * *"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update:
+    steps:
+      - uses: actions/checkout@v2
+      - name: Download new data
+        run: |
+          curl https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv > data/time_series_covid19_confirmed_global.csv
+          curl https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv > data/time_series_covid19_deaths_global.csv
+      - name: Convert to json
+        run: |
+          cd data
+          python3 convert-to-json.py
+      - name: Commit data
+        run: |
+          git config --global user.name 'Nico Schlömer'
+          git config --global user.email 'nschloe@users.noreply.github.com'
+          git commit -am "Automated update"
+          git push

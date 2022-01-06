@@ -1,8 +1,9 @@
-from datetime import datetime
-import matplotlib.pyplot as plt
 import json
-import numpy
+from datetime import datetime
+
+import matplotlib.pyplot as plt
 import matplotx
+import numpy
 from si_prefix import si_format
 
 plt.style.use(matplotx.styles.dufte)

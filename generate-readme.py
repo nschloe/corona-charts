@@ -1,10 +1,10 @@
 import json
-import numpy as np
-import matplotx
-from si_prefix import si_format
-import tempfile
 import subprocess
+import tempfile
 from pathlib import Path
+
+import matplotx
+import numpy as np
 
 
 def get_top(k, d, average_over, selection=None):

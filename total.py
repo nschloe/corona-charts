@@ -1,7 +1,8 @@
-import matplotlib.pyplot as plt
 import json
 import math
+
 import dufte
+import matplotlib.pyplot as plt
 from si_prefix import si_format
 
 plt.style.use(dufte.style)
@@ -13,10 +14,7 @@ def johnshopkins(which):
     with open("timeseries.json") as f:
         data = json.load(f)
 
-    return {
-        key: [val[which] for val in values]
-        for key, values in data.items()
-    }
+    return {key: [val[which] for val in values] for key, values in data.items()}
 
 
 d = johnshopkins("confirmed")
