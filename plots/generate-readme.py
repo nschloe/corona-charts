@@ -74,14 +74,14 @@ def get_chartjs_json(infile, selection=None):
                 "elements": {"point": {"radius": 0}},
                 # show only months
                 "scales": {
-                    "xAxes": [
+                    "x": [
                         {
                             "type": "time",
                             "time": {"unit": "month"},
-                            "gridLines": {"color": grid_color},
+                            "grid": {"color": grid_color},
                         }
                     ],
-                    "yAxes": [{"gridLines": {"color": grid_color}}],
+                    "y": [{"grid": {"color": grid_color}}],
                 },
             },
         }
