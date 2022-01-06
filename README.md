@@ -212,9 +212,10 @@
         "x": {
           "type": "time",
           "time": { "unit": "month" },
-          "grid": { "display": false }
+          "grid": { "display": false },
+          "ticks": { "color": "#6272a4" }
         },
-        "y": { "grid": { "color": "#6272a4" } }
+        "y": { "grid": { "color": "#6272a4" }, "ticks": { "color": "#6272a4" } }
       }
     }
   }
@@ -432,9 +433,10 @@
         "x": {
           "type": "time",
           "time": { "unit": "month" },
-          "grid": { "display": false }
+          "grid": { "display": false },
+          "ticks": { "color": "#6272a4" }
         },
-        "y": { "grid": { "color": "#6272a4" } }
+        "y": { "grid": { "color": "#6272a4" }, "ticks": { "color": "#6272a4" } }
       }
     }
   }
@@ -640,9 +642,10 @@
         "x": {
           "type": "time",
           "time": { "unit": "month" },
-          "grid": { "display": false }
+          "grid": { "display": false },
+          "ticks": { "color": "#6272a4" }
         },
-        "y": { "grid": { "color": "#6272a4" } }
+        "y": { "grid": { "color": "#6272a4" }, "ticks": { "color": "#6272a4" } }
       }
     }
   }
@@ -845,9 +848,10 @@
         "x": {
           "type": "time",
           "time": { "unit": "month" },
-          "grid": { "display": false }
+          "grid": { "display": false },
+          "ticks": { "color": "#6272a4" }
         },
-        "y": { "grid": { "color": "#6272a4" } }
+        "y": { "grid": { "color": "#6272a4" }, "ticks": { "color": "#6272a4" } }
       }
     }
   }

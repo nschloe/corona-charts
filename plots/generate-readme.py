@@ -41,7 +41,7 @@ def get_chartjs_json(infile, selection=None):
         avg = ret[average_over - 1 :] / average_over
         all_values.append(avg)
     # cut dates accordingly
-    d["dates"] = d["dates"][average_over - 1:]
+    d["dates"] = d["dates"][average_over - 1 :]
 
     colors = matplotx.styles.dracula["axes.prop_cycle"].by_key()["color"]
     grid_color = matplotx.styles.dracula["grid.color"]
@@ -81,8 +81,12 @@ def get_chartjs_json(infile, selection=None):
                         "type": "time",
                         "time": {"unit": "month"},
                         "grid": {"display": False},
+                        "ticks": {"color": grid_color},
                     },
-                    "y": {"grid": {"color": grid_color}},
+                    "y": {
+                        "grid": {"color": grid_color},
+                        "ticks": {"color": grid_color},
+                    },
                 },
             },
         }
