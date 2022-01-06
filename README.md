@@ -210,14 +210,14 @@
     "options": {
       "elements": { "point": { "radius": 0 } },
       "scales": {
-        "xAxes": [
+        "x": [
           {
             "type": "time",
             "time": { "unit": "month" },
-            "gridLines": { "color": "#6272a4" }
+            "grid": { "color": "#6272a4" }
           }
         ],
-        "yAxes": [{ "gridLines": { "color": "#6272a4" } }]
+        "y": [{ "grid": { "color": "#6272a4" } }]
       }
     }
   }
@@ -433,14 +433,14 @@
     "options": {
       "elements": { "point": { "radius": 0 } },
       "scales": {
-        "xAxes": [
+        "x": [
           {
             "type": "time",
             "time": { "unit": "month" },
-            "gridLines": { "color": "#6272a4" }
+            "grid": { "color": "#6272a4" }
           }
         ],
-        "yAxes": [{ "gridLines": { "color": "#6272a4" } }]
+        "y": [{ "grid": { "color": "#6272a4" } }]
       }
     }
   }
@@ -644,14 +644,14 @@
     "options": {
       "elements": { "point": { "radius": 0 } },
       "scales": {
-        "xAxes": [
+        "x": [
           {
             "type": "time",
             "time": { "unit": "month" },
-            "gridLines": { "color": "#6272a4" }
+            "grid": { "color": "#6272a4" }
           }
         ],
-        "yAxes": [{ "gridLines": { "color": "#6272a4" } }]
+        "y": [{ "grid": { "color": "#6272a4" } }]
       }
     }
   }
@@ -852,14 +852,14 @@
     "options": {
       "elements": { "point": { "radius": 0 } },
       "scales": {
-        "xAxes": [
+        "x": [
           {
             "type": "time",
             "time": { "unit": "month" },
-            "gridLines": { "color": "#6272a4" }
+            "grid": { "color": "#6272a4" }
           }
         ],
-        "yAxes": [{ "gridLines": { "color": "#6272a4" } }]
+        "y": [{ "grid": { "color": "#6272a4" } }]
       }
     }
   }
