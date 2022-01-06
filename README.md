@@ -210,14 +210,12 @@
     "options": {
       "elements": { "point": { "radius": 0 } },
       "scales": {
-        "x": [
-          {
-            "type": "time",
-            "time": { "unit": "month" },
-            "grid": { "color": "#6272a4" }
-          }
-        ],
-        "y": [{ "grid": { "color": "#6272a4" } }]
+        "x": {
+          "type": "time",
+          "time": { "unit": "month" },
+          "grid": { "color": "#6272a4" }
+        },
+        "y": { "grid": { "color": "#6272a4" } }
       }
     }
   }
@@ -433,14 +431,12 @@
     "options": {
       "elements": { "point": { "radius": 0 } },
       "scales": {
-        "x": [
-          {
-            "type": "time",
-            "time": { "unit": "month" },
-            "grid": { "color": "#6272a4" }
-          }
-        ],
-        "y": [{ "grid": { "color": "#6272a4" } }]
+        "x": {
+          "type": "time",
+          "time": { "unit": "month" },
+          "grid": { "color": "#6272a4" }
+        },
+        "y": { "grid": { "color": "#6272a4" } }
       }
     }
   }
@@ -644,14 +640,12 @@
     "options": {
       "elements": { "point": { "radius": 0 } },
       "scales": {
-        "x": [
-          {
-            "type": "time",
-            "time": { "unit": "month" },
-            "grid": { "color": "#6272a4" }
-          }
-        ],
-        "y": [{ "grid": { "color": "#6272a4" } }]
+        "x": {
+          "type": "time",
+          "time": { "unit": "month" },
+          "grid": { "color": "#6272a4" }
+        },
+        "y": { "grid": { "color": "#6272a4" } }
       }
     }
   }
@@ -852,14 +846,12 @@
     "options": {
       "elements": { "point": { "radius": 0 } },
       "scales": {
-        "x": [
-          {
-            "type": "time",
-            "time": { "unit": "month" },
-            "grid": { "color": "#6272a4" }
-          }
-        ],
-        "y": [{ "grid": { "color": "#6272a4" } }]
+        "x": {
+          "type": "time",
+          "time": { "unit": "month" },
+          "grid": { "color": "#6272a4" }
+        },
+        "y": { "grid": { "color": "#6272a4" } }
       }
     }
   }
