@@ -116,6 +116,7 @@
         {
           "label": "US",
           "borderColor": "#8be9fd",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 0, 0, 0, 0, 13, 148, 1146, 8524, 22210, 31406, 29737, 28899,
@@ -135,6 +136,7 @@
         {
           "label": "France",
           "borderColor": "#ffb86c",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 0, 0, 0, 0, 38, 286, 975, 2315, 4542, 0, 11619, 3754, 1253, 1244,
@@ -152,6 +154,7 @@
         {
           "label": "United Kingdom",
           "borderColor": "#50fa7b",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 1, 1, 0, 2, 29, 150, 595, 1767, 3706, 4799, 4296, 4867, 4609,
@@ -169,6 +172,7 @@
         {
           "label": "Italy",
           "borderColor": "#ff5555",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 0, 0, 0, 64, 376, 1339, 3321, 5524, 5169, 4121, 3676, 3167, 2323,
@@ -186,6 +190,7 @@
         {
           "label": "Spain",
           "borderColor": "#bd93f9",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 0, 0, 0, 1, 29, 293, 1661, 5086, 7800, 6300, 4203, 4392, 646,
@@ -202,7 +207,6 @@
         }
       ]
     },
-    "borderWidth": 1,
     "options": {
       "elements": { "point": { "radius": 0 } },
       "scales": {
@@ -337,6 +341,7 @@
         {
           "label": "France",
           "borderColor": "#8be9fd",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 0, 0, 0, 0, 38, 286, 975, 2315, 4542, 0, 11619, 3754, 1253, 1244,
@@ -354,6 +359,7 @@
         {
           "label": "United Kingdom",
           "borderColor": "#ffb86c",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 1, 1, 0, 2, 29, 150, 595, 1767, 3706, 4799, 4296, 4867, 4609,
@@ -371,6 +377,7 @@
         {
           "label": "Italy",
           "borderColor": "#50fa7b",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 0, 0, 0, 64, 376, 1339, 3321, 5524, 5169, 4121, 3676, 3167, 2323,
@@ -388,6 +395,7 @@
         {
           "label": "Spain",
           "borderColor": "#ff5555",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 0, 0, 0, 1, 29, 293, 1661, 5086, 7800, 6300, 4203, 4392, 646,
@@ -405,6 +413,7 @@
         {
           "label": "Germany",
           "borderColor": "#bd93f9",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 1, 0, 0, 1, 33, 235, 1488, 3570, 5792, 5060, 3065, 2270, 1555,
@@ -421,7 +430,6 @@
         }
       ]
     },
-    "borderWidth": 1,
     "options": {
       "elements": { "point": { "radius": 0 } },
       "scales": {
@@ -555,6 +563,7 @@
         {
           "label": "US",
           "borderColor": "#8be9fd",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 0, 0, 0, 0, 1, 3, 23, 167, 752, 1802, 2209, 2200, 1977, 1849,
@@ -571,6 +580,7 @@
         {
           "label": "Russia",
           "borderColor": "#ffb86c",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 5, 19, 45, 65, 80, 96, 108, 142, 177,
@@ -586,6 +596,7 @@
         {
           "label": "Poland",
           "borderColor": "#50fa7b",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 16, 18, 20, 28, 15, 18, 14, 9, 12, 13,
@@ -600,6 +611,7 @@
         {
           "label": "India",
           "borderColor": "#ff5555",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 17, 32, 39, 56, 100, 109, 126, 157,
@@ -615,6 +627,7 @@
         {
           "label": "Germany",
           "borderColor": "#bd93f9",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 0, 0, 0, 0, 0, 0, 3, 25, 102, 204, 207, 210, 169, 115, 83, 40,
@@ -628,7 +641,6 @@
         }
       ]
     },
-    "borderWidth": 1,
     "options": {
       "elements": { "point": { "radius": 0 } },
       "scales": {
@@ -763,6 +775,7 @@
         {
           "label": "Poland",
           "borderColor": "#8be9fd",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 16, 18, 20, 28, 15, 18, 14, 9, 12, 13,
@@ -777,6 +790,7 @@
         {
           "label": "Germany",
           "borderColor": "#ffb86c",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 0, 0, 0, 0, 0, 0, 3, 25, 102, 204, 207, 210, 169, 115, 83, 40,
@@ -791,6 +805,7 @@
         {
           "label": "France",
           "borderColor": "#50fa7b",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 0, 0, 0, 0, 0, 6, 14, 169, 492, 870, 896, 594, 392, 250, 181,
@@ -805,6 +820,7 @@
         {
           "label": "United Kingdom",
           "borderColor": "#ff5555",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 0, 0, 0, 0, 0, 1, 15, 83, 346, 779, 918, 878, 706, 545, 397, 308,
@@ -819,6 +835,7 @@
         {
           "label": "Italy",
           "borderColor": "#bd93f9",
+          "borderWidth": 1,
           "fill": false,
           "data": [
             0, 0, 0, 0, 1, 13, 102, 307, 646, 807, 644, 568, 491, 371, 286, 203,
@@ -832,7 +849,6 @@
         }
       ]
     },
-    "borderWidth": 1,
     "options": {
       "elements": { "point": { "radius": 0 } },
       "scales": {
