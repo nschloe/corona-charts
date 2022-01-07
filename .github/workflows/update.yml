@@ -3,7 +3,7 @@ name: update
 # perform every day
 on:
   schedule:
-    - cron: "55 8 * * *"
+    - cron: "0 4 * * *"
 
 # on:
 #   push:
