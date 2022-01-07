@@ -211,7 +211,7 @@
       "scales": {
         "x": {
           "type": "time",
-          "time": { "unit": "month" },
+          "time": { "minUnit": "month" },
           "grid": { "display": false },
           "ticks": { "color": "#5c6370" }
         },
@@ -432,7 +432,7 @@
       "scales": {
         "x": {
           "type": "time",
-          "time": { "unit": "month" },
+          "time": { "minUnit": "month" },
           "grid": { "display": false },
           "ticks": { "color": "#5c6370" }
         },
@@ -641,7 +641,7 @@
       "scales": {
         "x": {
           "type": "time",
-          "time": { "unit": "month" },
+          "time": { "minUnit": "month" },
           "grid": { "display": false },
           "ticks": { "color": "#5c6370" }
         },
@@ -847,7 +847,7 @@
       "scales": {
         "x": {
           "type": "time",
-          "time": { "unit": "month" },
+          "time": { "minUnit": "month" },
           "grid": { "display": false },
           "ticks": { "color": "#5c6370" }
         },

@@ -80,7 +80,7 @@ def get_chartjs_json(infile, selection=None):
                 "scales": {
                     "x": {
                         "type": "time",
-                        "time": {"unit": "month"},
+                        "time": {"minUnit": "month"},
                         "grid": {"display": False},
                         "ticks": {"color": grid_color},
                     },
