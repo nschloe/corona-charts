@@ -1,4 +1,10 @@
+<!--DO NOT EDIT. Automatically generated.-->
 # Corona charts
+
+You need the [xhub browser extension](https://github.com/nschloe/xhub) to
+display the charts in this page.
+
+## World
 
 ### Top 5 countries by daily infections (7-day average, world)
 
@@ -6,15 +12,18 @@
 {top10_confirmed_world}
 ```
 
-### Top 5 countries by daily infections (7-day average, Europe)
-
-```chartjs
-{top10_confirmed_europe}
-```
 ### Top 5 countries by daily deaths (7-day average, world)
 
 ```chartjs
 {top10_deaths_world}
+```
+
+## Europe
+
+### Top 5 countries by daily infections (7-day average, Europe)
+
+```chartjs
+{top10_confirmed_europe}
 ```
 
 ### Top 5 countries by daily deaths (7-day average, Europe)
