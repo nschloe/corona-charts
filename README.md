@@ -213,6 +213,7 @@ display the charts in this page.
     },
     "options": {
       "elements": { "point": { "radius": 0 } },
+      "legend": { "position": "right", "align": "middle" },
       "scales": {
         "x": {
           "type": "time",
@@ -423,6 +424,7 @@ display the charts in this page.
     },
     "options": {
       "elements": { "point": { "radius": 0 } },
+      "legend": { "position": "right", "align": "middle" },
       "scales": {
         "x": {
           "type": "time",
@@ -646,6 +648,7 @@ display the charts in this page.
     },
     "options": {
       "elements": { "point": { "radius": 0 } },
+      "legend": { "position": "right", "align": "middle" },
       "scales": {
         "x": {
           "type": "time",
@@ -852,6 +855,7 @@ display the charts in this page.
     },
     "options": {
       "elements": { "point": { "radius": 0 } },
+      "legend": { "position": "right", "align": "middle" },
       "scales": {
         "x": {
           "type": "time",

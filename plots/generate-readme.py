@@ -76,6 +76,8 @@ def get_chartjs_json(infile, selection=None):
             "options": {
                 # don't show markers
                 "elements": {"point": {"radius": 0}},
+                # legend to the right
+                "legend": {"position": "right", "align": "middle"},
                 # show only months
                 "scales": {
                     "x": {
@@ -109,11 +111,12 @@ def get_chartjs_json(infile, selection=None):
 
 
 def _main():
+    this_dir = Path(__file__).resolve().parent
     top10_confirmed_world = get_chartjs_json(
-        "../data/time_series_covid19_confirmed_global.json"
+        this_dir / ".." / "data" / "time_series_covid19_confirmed_global.json"
     )
     top10_deaths_world = get_chartjs_json(
-        "../data/time_series_covid19_deaths_global.json"
+        this_dir / ".." / "data" / "time_series_covid19_deaths_global.json"
     )
     european_contries = [
         "Austria",
@@ -135,13 +138,15 @@ def _main():
         "United Kingdom",
     ]
     top10_confirmed_europe = get_chartjs_json(
-        "../data/time_series_covid19_confirmed_global.json", selection=european_contries
+        this_dir / ".." / "data" / "time_series_covid19_confirmed_global.json",
+        selection=european_contries,
     )
     top10_deaths_europe = get_chartjs_json(
-        "../data/time_series_covid19_deaths_global.json", selection=european_contries
+        this_dir / ".." / "data" / "time_series_covid19_deaths_global.json",
+        selection=european_contries,
     )
 
-    with open("README.md.in") as f:
+    with open(this_dir / "README.md.in") as f:
         readme_in = f.read()
 
     readme_out = readme_in.format(
@@ -151,7 +156,7 @@ def _main():
         top10_deaths_europe=top10_deaths_europe,
     )
 
-    with open("../README.md", "w") as f:
+    with open(this_dir / ".." / "README.md", "w") as f:
         f.write(readme_out)
 
 
