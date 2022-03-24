@@ -30,7 +30,7 @@ jobs:
       - name: Create readme
         run: |
           pip install matplotx
-          python3 plots/generate-svg.py
+          python3 plots/generate-svgs.py
           mkdir svgs/
           mv *.svg svgs/
           npm install svgo
