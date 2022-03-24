@@ -33,7 +33,7 @@ jobs:
           python3 plots/generate-svgs.py
           mkdir svgs/
           mv *.svg svgs/
-          npm install svgo
+          npm install -g svgo
           svgo svgs/*
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.2.1
