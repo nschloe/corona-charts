@@ -1,6 +1,6 @@
 name: update
 
-perform every day
+# perform every day
 on:
   schedule:
     - cron: "0 4 * * *"
