@@ -1,9 +1,4 @@
-<!--DO NOT EDIT. Automatically generated.-->
-
 # Corona charts
-
-You need the [xhub browser extension](https://github.com/nschloe/xhub) to
-display the charts in this page.
 
 ## World
 
