@@ -1,3 +1,4 @@
+import hashlib
 import json
 from pathlib import Path
 from datetime import datetime
@@ -20,6 +21,10 @@ def sort_descending_by_last_average(keys, d, average_over):
     last_sums = [d[key][-1] - d[key][-average_over - 1] for key in keys]
     idx = np.argsort(last_sums)
     return [keys[k] for k in idx][::-1]
+
+
+def get_color(string: str) -> str:
+    return "#" + hashlib.md5(string.encode()).hexdigest()[:6]
 
 
 def plot_data(infile, selection=None):
@@ -52,7 +57,7 @@ def plot_data(infile, selection=None):
         plt.figure(figsize=(10, 5))
         for key, vals in zip(plot_keys, all_values):
             vals = np.clip(vals, 0, None)
-            plt.plot(dates, vals, label=key)
+            plt.plot(dates, vals, label=key, color=get_color(key))
 
         matplotx.line_labels()
 
