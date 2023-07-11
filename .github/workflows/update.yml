@@ -1,9 +1,10 @@
 name: update
 
 # perform every day
-on:
-  schedule:
-    - cron: "0 4 * * *"
+# data is no longer updated
+# on:
+#   schedule:
+#     - cron: "0 4 * * *"
 
 # on:
 #   push:
